@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .arrow-link {
+            display: inline-block;
+            font-size: 24px;
+            text-decoration: none;
+            color: #007bff; /* Link color */
+            margin-top: 20px;
+            transition: color 0.2s;
+        }
+        .arrow-link:hover {
+            color: #0056b3; /* Hover color */
+        }
+        .arrow {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-bottom: 30px solid #007bff; /* Arrow color */
+        }
+    </style>
+</head>
+<body>
+    <!-- Arrow Link to Redirect -->
+    <a href="/" class="arrow-link">
+        <span class="arrow"></span> Redirect to Job Page
+    </a>
+	<p>Email sent successfully</p>
+</body>
+</html>

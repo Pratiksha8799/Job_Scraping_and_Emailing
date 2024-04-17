@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Job Search</title>
+    
+    <style>
+    h1 {
+            text-align: center;
+        }
+        
+         
+        .search-form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+         .logo {
+            /* Center-align the logo horizontally */
+            display: block;
+            margin: 0 auto;
+            width: 150px; /* Adjust the width as needed */
+            height: auto; /* Maintain aspect ratio */
+            margin-bottom: 10px; /* Add some space below the logo */
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .note {
+            margin-top: 10px;
+            font-style: italic;
+            display: none;
+            color: #000000;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>Skills Search</h1>
+    <div class="search-form">
+
+        <form action="/search" method="post">
+            <div class="form-group">
+                <label for="skills">Skills:</label>
+                <input type="text" id="skills" name="skills" required>
+            </div>
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="website">Select a website:</label>
+                <select id="website" name="website">
+                    <option value="select">Select Website</option>
+                    <option value="seek">Seek</option>
+                    <option value="bayt">Bayt</option>
+                    <option value="foundit">Foundit</option>
+                    <option value="weworkremotely">Weworkremotely</option>
+                    <option value="AllSites">All sites</option>
+                </select>
+            </div>
+            <button type="submit">Search</button>
+            <div class="note" id="weworkremotely-note" style="text-align: center;" >WeWorkRemotely may have limited job listings.</div>
+            <div class="note" id="seek-note" style="text-align: center;" >Seek.com is for Australia location only.</div>
+            <div class="note" id="AllSites-note" style="text-align: center;" >Seek.com is for Australia location only.</div>
+            <p style="font-style: italic; color: #000000; text-align: center;">Strictly internal use only</p>
+        </form>
+    </div>
+    
+    <script>
+    // JavaScript to show/hide the note based on the website selection
+    const websiteSelect = document.getElementById('website');
+    const weworkremotelyNote = document.getElementById('weworkremotely-note');
+    const seekNote = document.getElementById('seek-note');
+    const allSitesNote = document.getElementById('AllSites-note');
+    
+    websiteSelect.addEventListener('change', () => {
+        if (websiteSelect.value === 'weworkremotely') {
+            weworkremotelyNote.style.display = 'block';
+            seekNote.style.display = 'none';
+            allSitesNote.style.display = 'none';
+        } else if (websiteSelect.value === 'seek') {
+            weworkremotelyNote.style.display = 'none';
+            seekNote.style.display = 'block';
+            allSitesNote.style.display = 'none';
+        } else if (websiteSelect.value === 'AllSites') {
+            weworkremotelyNote.style.display = 'none';
+            seekNote.style.display = 'none';
+            allSitesNote.style.display = 'block';
+        } else {
+            weworkremotelyNote.style.display = 'none';
+            seekNote.style.display = 'none';
+            allSitesNote.style.display = 'none';
+        }
+    });
+</script>
+
+</body>
+</html>
