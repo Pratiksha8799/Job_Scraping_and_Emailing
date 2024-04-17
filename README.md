@@ -1,7 +1,7 @@
 
 # Automated Job Scraping and Emailing
 
-![App Screenshot](https://github.com/Pratiksha8799/Python-Projects/blob/main/Basic_Charts/images/AI.png)
+![App Screenshot](https://github.com/Pratiksha8799/Basic_Charts_Plotly/blob/main/images/AI.png)
 
 The project aims to automate the process of job scraping from various websites based on user-provided criteria (skills and location) and then emailing the scraped data to the user.
 
